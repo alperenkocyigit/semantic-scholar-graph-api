@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/alperenkocyigit-semantic-scholar-graph-api-badge.png)](https://mseep.ai/app/alperenkocyigit-semantic-scholar-graph-api)
+
 # 📚 Semantic Scholar MCP Server
 
 > **A comprehensive Model Context Protocol (MCP) server for seamless integration with Semantic Scholar's academic database**
