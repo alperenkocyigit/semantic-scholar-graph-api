@@ -25,7 +25,9 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Initialize the FastMCP server
-app = FastMCP("Semantic Scholar MCP Server")
+host = os.getenv("HOST", "0.0.0.0")
+port = int(os.getenv("PORT", "3000"))
+app = FastMCP("Semantic Scholar MCP Server", host=host, port=port)
 
 # Tool implementations
 @app.tool()
@@ -293,10 +295,6 @@ async def get_semantic_scholar_paper_recommendations(
         raise Exception(f"An error occurred while getting paper recommendations for single paper: {str(e)}")
 
 if __name__ == "__main__":
-    # Get configuration from environment variables
-    port = int(os.getenv('PORT', 3000))
-    host = os.getenv('HOST', '0.0.0.0')
-    
     logger.info(f"Starting Semantic Scholar MCP HTTP Server on {host}:{port}")
     
     # Run the FastMCP server with streamable HTTP transport
